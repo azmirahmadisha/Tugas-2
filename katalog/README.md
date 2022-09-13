@@ -1,4 +1,5 @@
 Aplikasi Heroku dapat diakses pada [link]([https://pages.github.com/](http://katalog-tugas2.herokuapp.com/katalog/)).
+This site was built using [GitHub Pages](https://pages.github.com/).
 
 
 #### Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html;
