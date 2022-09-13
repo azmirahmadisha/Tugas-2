@@ -26,7 +26,7 @@ html.
 pada urlpatterns. Aplikasi katalog juga kemudian ditambahkan pada variable urlpatterns di file urls.py yang ada
 di folder project_django dengan command path include.
 
-3.Pemetaan data untuk ditampilkan ke katalog.html dilakukan dengan menggunakan variable-variable yang sudah dibuat pada fungsi show_katalog
+3. Pemetaan data untuk ditampilkan ke katalog.html dilakukan dengan menggunakan variable-variable yang sudah dibuat pada fungsi show_katalog
 di file views.py. Data barang di-load dengan melakukan iterasi untuk setiap elemen di variable list_item.
 
 4. Deployment ke Heroku dilakukan dengan membuat repository secrets berisi nama aplikasi Heroku dan API key dari aplikasi Heroku. Setelah itu,
