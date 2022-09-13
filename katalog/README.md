@@ -1,4 +1,4 @@
-Aplikasi Heroku dapat diakses pada [link]([https://pages.github.com/](http://katalog-tugas2.herokuapp.com/katalog/)).
+Aplikasi Heroku dapat diakses pada [link](https://pages.github.com/](http://katalog-tugas2.herokuapp.com/katalog/).
 This site was built using [GitHub Pages](https://pages.github.com/).
 
 
