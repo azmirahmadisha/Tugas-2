@@ -4,6 +4,7 @@ Aplikasi Heroku dapat diakses pada [tautan berikut](http://katalog-tugas2.heroku
 #### Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html;
 
 [Gambar bagan](https://raw.githubusercontent.com/azmirahmadisha/Tugas-2/main/katalog/Flowchart.png)
+![Image](/katalog/Flowchart.png)
 
 
 #### Jelaskan kenapa menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
