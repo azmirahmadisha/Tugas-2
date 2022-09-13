@@ -1,12 +1,12 @@
 Aplikasi Heroku dapat diakses pada [tautan berikut](http://katalog-tugas2.herokuapp.com/katalog/).
-
+<br />
 
 #### Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html;
 
 [Gambar bagan](https://raw.githubusercontent.com/azmirahmadisha/Tugas-2/main/katalog/Flowchart.png)
 ![Image](/katalog/Flowchart.png)
 
-
+<br />
 #### Jelaskan kenapa menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 
 Sebenernya kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment, tetapi
@@ -16,7 +16,7 @@ menjadi terisolasi. Penggunaan virtual environment juga memungkinkan versi proye
 pengguna menggunakan device yang berbeda.
 
 
-
+<br />
 #### Jelaskan bagaimana cara kamu mengimplementasikan poin 1 sampai dengan 4 di atas.
 
 1. Poin pertama dilakukan dengan membuat file views.py yang melakukan import CatalogItem dari models.py yang sudah 
