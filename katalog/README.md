@@ -3,7 +3,7 @@ Aplikasi Heroku dapat diakses pada [tautan berikut](http://katalog-tugas2.heroku
 
 #### Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html;
 
-[Gambar bagan](https://raw.githubusercontent.com/azmirahmadisha/Tugas-2/main/katalog/Flowchart.png)
+
 ![Image](/katalog/Flowchart.png)
 
 <p align="justify"> Berdasarkan bagan di atas, URL Mapper (urls.py) digunakan untuk mengarahkan permintaan HTTP dari client ke view yang sesuai berdasarkan URL yang di-request. URL Mapper (urls.py) juga kemudian dapaet mencocokkan pola string atau angka tertentu yang muncul di URL dan meneruskannya ke fungsi tampilan sebagai data. Selanjutnya, pada bagian selanjutnya, View (views.py) akan mengakses data yang dibutuhkan untuk memenuhi request client melalui models dan menyerahkan formatting dari respons ke template. Sementara itu, model berperan sebagai penyedia mekanisme untuk mengelola dan meminta catatan di database, serta mendefinisikan struktur dari data aplikasi. Template sendiri berperan untuk mendefinisikan struktur file (misal: halaman HTML). Dalam hubungannya dengan view, sebagai contoh, file views.py dapat membuat sebuah halaman HTML dengan memanfaatkan template HTML dan mengisinya dengan data yang didapat dari file model. </p>
