@@ -32,7 +32,6 @@ pada urlpatterns. Aplikasi katalog juga kemudian ditambahkan pada variable urlpa
 di folder project_django dengan command path include.
 
 3. Pemetaan data untuk ditampilkan ke katalog.html dilakukan dengan menggunakan variable-variable yang sudah dibuat pada fungsi show_katalog
-di file views.py. Data barang di-load dengan melakukan iterasi untuk setiap elemen di variable list_item.
+di file views.py. Data barang di-load dengan melakukan iterasi untuk setiap elemen di variable list_item agar dapat ditampilkan di halaman HTML. Untuk melihat halaman HTML sebelum di-deploy, digunakan command runserver untuk dapat mengakses localhost:8000.
 
-4. Deployment ke Heroku dilakukan dengan membuat repository secrets berisi nama aplikasi Heroku dan API key dari aplikasi Heroku. Setelah itu,
-workflow yang tadinya gagal akan dijalankan kembali dan deployment selesai.
+4. Deployment ke Heroku dilakukan dengan membuat sebuah aplikasi di laman Heroku dan membuat repository secrets berisi nama aplikasi Heroku dan API key dari aplikasi Heroku. Setelah itu, workflow yang tadinya gagal akan dijalankan kembali dan deployment selesai.
