@@ -23,12 +23,12 @@ pengguna menggunakan device yang berbeda. </p>
 
 #### Jelaskan bagaimana cara kamu mengimplementasikan poin 1 sampai dengan 4 di atas.
 
-<p align="justify"> 1. Poin pertama dilakukan dengan membuat file views.py yang melakukan import CatalogItem dari models.py yang sudah tersedia. Pada file views.py, dibuat sebuah fungsi yang menerima parameter request dan melakukan rendering ke file html. </p>
+1. <p align="justify">Poin pertama dilakukan dengan membuat file views.py yang melakukan import CatalogItem dari models.py yang sudah tersedia. Pada file views.py, dibuat sebuah fungsi yang menerima parameter request dan melakukan rendering ke file html. </p>
 
-<p align="justify"> 2. Poin kedua dilakukan dengan mengimport fungsi show_katalog yang ada pada file views.py. Selaunjutnya, fungsi show_wishlist didaftarkan
+2. <p align="justify">Poin kedua dilakukan dengan mengimport fungsi show_katalog yang ada pada file views.py. Selaunjutnya, fungsi show_wishlist didaftarkan
 pada urlpatterns. Aplikasi katalog juga kemudian ditambahkan pada variable urlpatterns di file urls.py yang ada di folder project_django dengan command path include. </p>
 
-<p align="justify"> 3. Pemetaan data untuk ditampilkan ke katalog.html dilakukan dengan menggunakan variable-variable yang sudah dibuat pada fungsi show_katalog
+3. <p align="justify">Pemetaan data untuk ditampilkan ke katalog.html dilakukan dengan menggunakan variable-variable yang sudah dibuat pada fungsi show_katalog
 di file views.py. Data barang di-load dengan melakukan iterasi untuk setiap elemen di variable list_item agar dapat ditampilkan di halaman HTML. Untuk melihat halaman HTML sebelum di-deploy, digunakan command runserver untuk dapat mengakses localhost:8000. </p>
 
-<p align="justify"> 4. Deployment ke Heroku dilakukan dengan membuat sebuah aplikasi di laman Heroku dan membuat repository secrets berisi nama aplikasi Heroku dan API key dari aplikasi Heroku. Setelah itu, workflow yang tadinya gagal akan dijalankan kembali dan deployment selesai. </p>
+4. <p align="justify">Deployment ke Heroku dilakukan dengan membuat sebuah aplikasi di laman Heroku dan membuat repository secrets berisi nama aplikasi Heroku dan API key dari aplikasi Heroku. Setelah itu, workflow yang tadinya gagal akan dijalankan kembali dan deployment selesai. </p>
