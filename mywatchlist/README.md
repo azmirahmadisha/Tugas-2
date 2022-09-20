@@ -3,10 +3,9 @@ Aplikasi Heroku dapat diakses pada [tautan berikut](https://watchlist-adish.hero
 
 ### Jelaskan perbedaan antara JSON, XML, dan HTML!
 
-JSON (JavaScript Object Notation) adalah sebuah format data yang digunakan untuk pertukaran dan penyimpanan data. JSON digunakan untuk menyimpan informasi dengan cara yang terorganisir dan mudah diakses. Bentuk lengkapnya adalah JavaScript Object Notation. Ini menawarkan kumpulan data yang dapat dibaca manusia yang dapat diakses secara logis. 
-XML adalah bahasa markup yang dirancang untuk menyimpan data. XML populer digunakan untuk melakukan transfer data. Sementara itu, HTML adalah bahasa standar pemrogaman yang digunakan untuk membuat halaman website, yang diakses melalui internet.
+<p align="justify">JSON (JavaScript Object Notation) adalah sebuah format data yang digunakan untuk pertukaran dan penyimpanan data. JSON digunakan untuk menyimpan informasi dengan cara yang terorganisir dan mudah diakses. Bentuk lengkapnya adalah JavaScript Object Notation. Ini menawarkan kumpulan data yang dapat dibaca manusia yang dapat diakses secara logis. XML adalah bahasa markup yang dirancang untuk menyimpan data. XML populer digunakan untuk melakukan transfer data. Sementara itu, HTML adalah bahasa standar pemrogaman yang digunakan untuk membuat halaman website, yang diakses melalui internet.</p>
 
-JSON dan XML/HTML sendiri sudah memiliki perbedaan yang signifikan karena JSON adalah sebuah format data sementara XML dan HTML adalah bahasa markup. XML dan HTML digunakan untuk menyimpan dan mengangkut data dari satu aplikasi ke aplikasi lain melalui Internet, sementara JSON adalah format pertukaran data ringan yang memungkinkan komputer untuk mengurai data secara lebih mudah. Di sisi lain, perbedaan HTML dan XML adalah HTML menitikberatkan pada bagaimana format tampilan dari data, sedangkan XML menitikberatkan pada struktur dan konteksnya.
+<p align="justify">JSON dan XML/HTML sendiri sudah memiliki perbedaan yang signifikan karena JSON adalah sebuah format data sementara XML dan HTML adalah bahasa markup. XML dan HTML digunakan untuk menyimpan dan mengangkut data dari satu aplikasi ke aplikasi lain melalui Internet, sementara JSON adalah format pertukaran data ringan yang memungkinkan komputer untuk mengurai data secara lebih mudah. Di sisi lain, perbedaan HTML dan XML adalah HTML menitikberatkan pada bagaimana format tampilan dari data, sedangkan XML menitikberatkan pada struktur dan konteksnya.</p>
 
 
 #### Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
@@ -31,8 +30,6 @@ pengguna menggunakan device yang berbeda. </p>
 4. <p align="justify"> Poin keempat dilakukan dengan membuat sebuah folder baru bernama fixtures di dalam folder aplikasi mywatchlist, lalu membuat file JSON yang berisi 10 data dari film yang dimasukkan ke dalam watchlist. Pengisian data dilakukan dengan berpatokan pada tipe data yang telah diatur di file models.py sebelumnya. </p>
 
 5. <p align="justify"> Poin kelima dilakukan dengan menambahkan line import HttpResponse dan serializers di file views.py, lalu membuat dua fungsi bernama show_xml dan show_json untuk melakukan rendering aplikasi dalam format xml dan json. Di dalam kedua fungsi, dibuat sebuah variable bernama data yang menyimpan hasil query dari seluruh data yang ada di WatchlistItem pada file models.py. Fungsi tersebut akan melakukan return function HttpResponse yang berisi parameter data hasil query yang sudah diserialisasi menjadi XML/JSON dan parameter content_type="application/xml" atau content_type="application/json" sesuai dengan fungsinya. </p>
-
 6. <p align="justify". Poin keenam dilakukan dengan menambahkan line import fungsi show_xml dan show_json di file urls.py yang ada di dalam folder aplikasi mywatchlist. Selanjutnya, proses dilanjutkan dengan menambahkan path url ke dalam urlpatterns agar fungsi yang sudah diimpor dapat diakses. </p>
-
 7. <p align="justify">Deployment ke Heroku dilakukan dengan membuat sebuah aplikasi di laman Heroku dan membuat repository secrets berisi nama aplikasi Heroku dan API key dari aplikasi Heroku. Setelah itu, workflow yang tadinya gagal akan dijalankan kembali dan deployment selesai. </p>
 
