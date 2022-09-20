@@ -7,8 +7,9 @@ Aplikasi Heroku dapat diakses pada [tautan berikut](https://watchlist-adish.hero
 
 <p align="justify">JSON dan XML/HTML sendiri sudah memiliki perbedaan yang signifikan karena JSON adalah sebuah format data sementara XML dan HTML adalah bahasa markup. XML dan HTML digunakan untuk menyimpan dan mengangkut data dari satu aplikasi ke aplikasi lain melalui Internet, sementara JSON adalah format pertukaran data ringan yang memungkinkan komputer untuk mengurai data secara lebih mudah. Di sisi lain, perbedaan HTML dan XML adalah HTML menitikberatkan pada bagaimana format tampilan dari data, sedangkan XML menitikberatkan pada struktur dan konteksnya.</p>
 
+<br />
 
-#### Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
+### Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
 
 <p align="justify"> Sebenernya kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment, tetapi
 penggunaan virtual environment dalam pengembangan aplikasi web berbasis Django mengantisipasi modul-modul yang ada
@@ -19,7 +20,7 @@ pengguna menggunakan device yang berbeda. </p>
 
 <br />
 
-#### Jelaskan bagaimana cara kamu mengimplementasikan poin 1 sampai dengan 4 di atas.
+### Jelaskan bagaimana cara kamu mengimplementasikan poin 1 sampai dengan 4 di atas.
 
 1. <p align="justify">Poin pertama dilakukan dengan menjalankan perintah python manage.py startapp mywatchlist pada Command Prompt. Perintah ini akan secara otomatis membuat sebuah aplikasi dalam bentuk folder, beserta beberapa file bawaan python yang digunakan untuk menyokong aplikasi yang telah dibuat (pada kasus ini, aplikasi bernama mywatchlist). </p>
 2. <p align="justify">Poin kedua dilakukan dengan membuat sebuah file bernama urls.py di dalam folder aplikasi mywatchlist dan melakukan routing agar aplikasi mywatchlist dapat diakses melalui browser. Path dari aplikasi mywatchlist dimasukkan ke sebuah variable bernama urlpatterns. Selanjutnya, proses dilanjutkan dengan menambahkan url 'mywatchlist.html' di file urls.py yang terletak di dalam folder project_django. </p>
