@@ -33,7 +33,12 @@ pengguna menggunakan device yang berbeda. </p>
 <br />
 
 ### Mengakses tiga URL di poin 6 menggunakan Postman, menangkap screenshot, dan menambahkannya ke dalam README.md
+1. http://127.0.0.1:8000/mywatchlist/html/
 ![Image](/mywatchlist/postman-html.png)
+
+2. http://127.0.0.1:8000/mywatchlist/json/
 ![Image](/mywatchlist/postman-json.png)
+
+3. http://127.0.0.1:8000/mywatchlist/xml/
 ![Image](/mywatchlist/postman-xml.png)
 
