@@ -1,4 +1,4 @@
-Aplikasi Heroku dapat diakses pada [tautan berikut](https://watchlist-adish.herokuapp.com/mywatchlist/html/).
+Aplikasi Heroku dapat diakses pada [tautan berikut](http://katalog-tugas2.herokuapp.com/mywatchlist/).
 <br />
 
 ### Jelaskan perbedaan antara JSON, XML, dan HTML!
