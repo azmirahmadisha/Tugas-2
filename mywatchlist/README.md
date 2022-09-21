@@ -5,17 +5,15 @@ Aplikasi Heroku dapat diakses pada [tautan berikut](http://katalog-tugas2.heroku
 
 <p align="justify">JSON (JavaScript Object Notation) adalah sebuah format data yang digunakan untuk pertukaran dan penyimpanan data. JSON digunakan untuk menyimpan informasi dengan cara yang terorganisir dan mudah diakses. Bentuk lengkapnya adalah JavaScript Object Notation. JSON menawarkan kumpulan data yang dapat dibaca manusia yang dapat diakses secara logis. XML adalah bahasa markup yang dirancang untuk menyimpan data. XML populer digunakan untuk melakukan transfer data. Sementara itu, HTML adalah bahasa standar pemrogaman yang digunakan untuk membuat halaman website, yang diakses melalui internet.</p>
 
-<p align="justify">JSON dan XML/HTML sendiri sudah memiliki perbedaan yang signifikan karena JSON adalah sebuah format data sementara XML dan HTML adalah bahasa markup. XML dan HTML digunakan untuk menyimpan dan mengangkut data dari satu aplikasi ke aplikasi lain melalui Internet, sementara JSON adalah format pertukaran data ringan yang memungkinkan komputer untuk mengurai data secara lebih mudah. Di sisi lain, perbedaan HTML dan XML adalah HTML menitikberatkan pada bagaimana format tampilan dari data, sedangkan XML menitikberatkan pada struktur dan konteksnya.</p>
+<p align="justify">Meskipun JSON dan XML sama-sama merupakan return result dari HTTP request ketika browser me-request data, JSON dan XML/HTML sendiri sudah memiliki perbedaan yang signifikan karena JSON adalah sebuah format pertukaran data sementara XML dan HTML adalah bahasa markup yang digunakan untuk mengekspresikan dan menyusun konten. Ketika JSON merupakan sebuah cara untuk merepresentasikan data, XML adalah sebuah markup language yang menggunakan struktur tag untuk merepresentasikan item data. JSON digunakan untuk merepresentasikan data sebagai pasangan nilai kunci, yang dapat dengan mudah dikonversi ke dan dari objek JavaScript.
+
+Di sisi lain, perbedaan HTML dan XML adalah HTML menitikberatkan pada bagaimana format tampilan dari data, sedangkan XML menitikberatkan pada struktur dan konteksnya. Ketika HTML memiliki data dan representasinya, XML hanya memiliki data. HTML digunakan untuk menyusun teks pada halaman web agar ditampilkan dengan tepat di browser web, sementara XML umumnya digunakan untuk menyusun data atau pesan.</p>
 
 <br />
 
 ### Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
 
-<p align="justify"> Sebenernya kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment, tetapi
-penggunaan virtual environment dalam pengembangan aplikasi web berbasis Django mengantisipasi modul-modul yang ada
-menjadi tumpang tindih. Hal ini dilakukan agar instalasi-instalasi yang kita lakukan pada proyek Django tersebut
-menjadi terisolasi. Penggunaan virtual environment juga memungkinkan versi proyek Django tetap konsisten meskipun
-pengguna menggunakan device yang berbeda. </p>
+<p align="justify"> Data delivery digunakan untuk melakukan transfer data dari suatu format ke format yang lain. Dalam mengimplementasikan sebuah platform, mekanisme data delivery dibutuhkan untuk menyajikan data sesuai dengan request yang diterima dari client. Sebagai contoh, ketika client melakukan request halaman HTML page, server akan mengembalikan berkas dalam format HTML. Begitu pula ketika client melakukan request data, format yang akan dikembalikan adalah JSOn atau XML. Proses-proses di atas tidak akan dapat dilakukan jika kita tidak melakukan data delivery.  </p>
 
 
 <br />
