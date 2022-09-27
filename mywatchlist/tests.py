@@ -20,4 +20,5 @@ class TestingWatchlist(TestCase):
         response = self.client.get('/mywatchlist/html/')
         self.assertEqual(response.status_code,200)
 
-    
+
+        

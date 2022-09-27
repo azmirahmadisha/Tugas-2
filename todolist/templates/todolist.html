@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Username: {{user.get_username}}</h3>
+
+<table border="2">
+    <tr>
+    <th style="text-align:center">Tanggal Pembuatan Task</th>
+    <th style="text-align:center">Judul Task</th>
+    <th style="text-align:center">Deskripsi Task</th>
+    <th style="text-align:center">Status Task</th>
+    <th style="text-align:center">Update Task</th>
+    <th style="text-align:center">Delete Task</th>
+
+    </tr>
+    
+    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+    {% for item in data_todolist %}
+        <tr>
+            <td style="text-align:center">{{item.date}}</td>
+            <td style="text-align:center">{{item.title}}</td>
+            <td style="text-align:center">{{item.description}}</td>
+            <td>{% if item.isFinished %} Selesai {% else %} Belum Selesai {% endif %}</td>
+            <td><button class="btn-ans"><a href="{% url 'todolist:updateTodo' item.id %}">Update</a></button></td>
+            <td><button class="btn-ans"><a href="{% url 'todolist:deleteTodo' item.id %}">Delete</a></button></td>
+        </tr>
+    {% endfor %}
+</table>
+
+<br>
+<button><a href="{% url 'todolist:create-task' %}">Tambah Task</a></button>
+<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+
+{% endblock content %}
