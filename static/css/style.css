@@ -1,4 +1,4 @@
-div {
+/* div {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     
@@ -14,4 +14,4 @@ div {
   }
   td {
     border: solid 2px red;
-  }
+  } */

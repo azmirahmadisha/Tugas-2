@@ -14,7 +14,7 @@ from todolist.models import TodoListItem
 # Create your views here.
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
-    data_todolist = TodoListItem.objects.all()
+    data_todolist = TodoListItem.objects.filter(user=request.user)
     context = {
     'data_todolist': data_todolist,
     }
@@ -65,11 +65,13 @@ def logout_user(request):
     response.delete_cookie('last_login')
     return response
 
+@login_required(login_url='/todolist/login/')
 def deleteTodo(request, i):
     y = TodoListItem.objects.get(id= i)
     y.delete()
     return HttpResponseRedirect('/todolist/')
 
+@login_required(login_url='/todolist/login/')
 def updateTodo(request, i):
     item = TodoListItem.objects.get(user=request.user, pk = i)
     item.isFinished = not item.isFinished
