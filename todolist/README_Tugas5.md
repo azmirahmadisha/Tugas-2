@@ -10,13 +10,13 @@ Internal CSS adalah kode CSS yang ditulis di dalam tag <style> dan kode HTML dit
 ### Jelaskan tag HTML5 yang kamu ketahui.
 
 Beberapa tag HTML5 antara lain:
-  1. "<a>" yang digunakan untuk mendefinisikan sebuah hyperlink / meletakkan tautan.
-  2. "<b>" yang digunakan untuk menampilkan text dalam gaya bold/huruf tebal.
-  3. "<br>" yang digunakan untuk memberi break single line.
-  4. "<button>" yang membuat sebuah tombol di HTML.
-  5. "<div>" yang menspesifikasikan sebuah section dalam dokumen/file HTML.
-  6. "<li>" yang mendefinisikan sebuah item list.
-  6. "<p>" yang berarti paragraf.
+  1. "a" yang digunakan untuk mendefinisikan sebuah hyperlink / meletakkan tautan.
+  2. "b" yang digunakan untuk menampilkan text dalam gaya bold/huruf tebal.
+  3. "br" yang digunakan untuk memberi break single line.
+  4. "button" yang membuat sebuah tombol di HTML.
+  5. "div" yang menspesifikasikan sebuah section dalam dokumen/file HTML.
+  6. "li" yang mendefinisikan sebuah item list.
+  6. "p" yang berarti paragraf.
 
 <br />
 
