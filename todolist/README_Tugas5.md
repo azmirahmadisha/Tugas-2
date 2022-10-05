@@ -30,20 +30,8 @@ Beberapa tag HTML5 antara lain:
 
  ### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 
-1. <p align="justify">Poin pertama dilakukan dengan menjalankan perintah python manage.py startapp todolist pada Command Prompt. Perintah ini akan secara otomatis membuat sebuah aplikasi dalam bentuk folder, beserta beberapa file bawaan python yang digunakan untuk menyokong aplikasi yang telah dibuat (pada kasus ini, aplikasi bernama todolist). </p>
-2. <p align="justify">Poin kedua dilakukan dengan membuat sebuah file bernama urls.py di dalam folder aplikasi todolist dan melakukan routing agar aplikasi todolist dapat diakses melalui browser. Path dari aplikasi todolist dimasukkan ke sebuah variable bernama urlpatterns. Selanjutnya, proses dilanjutkan dengan menambahkan url 'todolist.html' di file urls.py yang terletak di dalam folder project_django. </p>
-3. <p align="justify"> Poin ketiga dilakukan dengan mengisi file models.py yang terletak di dalam folder aplikasi todolist dengan cara membuat class bernama Task yang memiliki variable-variable yang diminta, yaitu user (menggunakan tipe model ForeignKey dengan parameter User), date, title, dan description. Setiap variable yang dibuat memiliki tipe data yang disesuaikan dengan kebutuhan aplikasi.  </p>
-4. <p align="justify"> Pada poin keempat, yang pertama dilakukan adalah membuat form registrasi. Proses ini dilakukan dengan membuat sebuah fungsi register pada views.py yang menerima parameter request. Tambahkan juga import redirect, UserCreationForm, dan messages pada bagian paling atas views.py. Kemudian, fungsi register diisi dengan perintah yang sesuai.</p>
+1. <p align="justify">Poin pertama dilakukan dengan Menambahkan barisan kode yang dibutuhkan agar aplikasi dapat menggunakan Bootstrap. Kustomisasi yang dilakukan dengan menambahkan styling code menggunakan internal dan inline CSS pada elemen yang diinginkan. Sementara itu, dilakukan perubahan pada kode todolist.html dengan menambahkan div class card untuk setiap task (dibuat setiap melakukan looping).</p>
 
-5. <p align="justify">Poin kelima dilakukan dengan membuat sebuah berkas HTML dengan nama todolist.html di dalam folder templates. Berkas HTML secara umum berisi judul halaman, username dari user yang sedang log in, lalu melakukan iterasi untuk setiap elemen yang ada pada model Task. Field-field tersebut akan ditampilkan dalam bentuk tabel sehingga digunakan tag table. Selanjutnya, ditambahkan tombol tambah task baru yang nantinya akan dikaitkan dengan fungsi pembuatan task. </p>
- 
-6. <p align="justify">Poin keenam dilakukan dengan membuat sebuah fungsi dengan nama create_task di views.py. Fungsi ini akan menerima parameter request dan mengembalikan redirect ke halaman html bernama create-task. Fungsi ini melakukan pengambilan dan penyimpanan data yang dimasukkan oleh user sebagai input. Kemudian, dibuat sebuah berkas HTML yang secara garis besar berisi form untuk meminta nama dan deskripsi dari tag. Selanjutnya, dilakukan routing url dengan mengimpor fungsi create_Task di berkas urls.py yang ada di folder todolist dan menambahkan path ke variable urlpatterns.</p>
-  
-7. <p align="justify">Routing halaman telah dilakukan pada langkah sebelumnya, yaitu dengan mengimport fungsi yang diinginkan, lalu menambahkan path fungsi tersebut ke variable urlpatterns.</p>
-  
-8. <p align="justify">Deployment ke Heroku dilakukan dengan membuat sebuah aplikasi di laman Heroku dan membuat repository secrets berisi nama aplikasi Heroku dan API key dari aplikasi Heroku. Setelah itu, workflow yang tadinya gagal akan dijalankan kembali dan deployment selesai. </p>
-  
-9. <p align="justify">Poin terakhir dilakukan dengan membuat akun langsung setelah dapat mengakses web dari aplikasi Heroku, lalu menambahkan task pada masing-masing akun yang telah dibuat. </p>
-  
+2. <p align="justify">Poin kedua dilakukan dengan navigation bar untuk semua halaman menggunakan tag nav. </p>
 
 <br />
