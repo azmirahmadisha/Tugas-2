@@ -14,7 +14,6 @@
     margin-right: 20px;
     margin-left: 450px;
     border-radius: 25px;
-    border: 2px solid #73AD21;
     padding: 20px;
     width: 400px;
     height: 350px;
@@ -39,12 +38,15 @@
     border: salmon;
 }
 
+body {
+background-color: 	#FFA07A;
+}
 
 </style>
 
 <div class = "login">
 
-    <h1>Login</h1>
+    <h1 style="text-align:center">Login</h1>
 
     <form method="POST" action="">
         {% csrf_token %}

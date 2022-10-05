@@ -2,36 +2,274 @@
 
 {% block content %}
 
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+<style>
 
-<h3>Username: {{user.get_username}}</h3>
+*{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-<table border="2">
-    <tr>
-    <th style="text-align:center">Tanggal Pembuatan Task</th>
-    <th style="text-align:center">Judul Task</th>
-    <th style="text-align:center">Deskripsi Task</th>
-    <th style="text-align:center">Status Task</th>
-    <th style="text-align:center">Update Task</th>
-    <th style="text-align:center">Delete Task</th>
+body{
+  background-color: 	#FFA07A;
+}
 
-    </tr>
+.container{
+  width: 80%;
+  min-height: 100vh;  
+  display: -webkit-box;  
+  display: -ms-flexbox;  
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:auto;
+  margin-bottom: auto;
+}
+
+.center{
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card{
+  background-color: white;
+  width: 250px;
+  min-height: 250px * 1.618;
+  
+  display: -webkit-box;
+  
+  display: -ms-flexbox;
+  
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  margin: 5px;
+  
+  -webkit-box-shadow: -20px -20px 0px 0px lighten(salmon, 5%);
+  box-shadow: -20px -20px 0px 0px lighten(salmon, 5%);
+  border-radius: 10px;
+  
+  -webkit-animation-name: shadow-show; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
+  animation-name: shadow-show;
+  animation-duration: 1.5s;
+  
+  -webkit-transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+  -o-transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+  transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000); /* custom */
+
+}
+  
+  h1,h2,h3,h4,h5{
+    margin: 0px;
+    padding: 0px 0px 15px 0px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+    color: black;
+  }
+  
+  hr{
+    display: block;
+    border: none;
+    height: 3px;
+    background-color: salmon;
+    margin: 0px;
     
+    -webkit-animation-name: line-show; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 0.3s; /* Safari 4.0 - 8.0 */
+    animation-name: line-show;
+    animation-duration: 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+    -o-transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+    transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000); /* custom */
+  }
+  
+  p{
+    margin: 15px 0px 0px 0px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 100;
+    letter-spacing: -0.25px;
+    line-height: 1.25;
+    font-size: 16px;
+    word-break: break-all;
+    word-wrap: pre-wrap;
+    color: black;
+    
+    -webkit-animation-name: p-show; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
+    animation-name: p-show;
+    animation-duration: 1.5s;
+  }
+
+.btn-ans {
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.btn-ans:hover {
+  background-color: #F3F4F6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.btn-ans:disabled {
+  background-color: #FAFBFC;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959DA5;
+  cursor: default;
+}
+
+.btn-ans:active {
+  background-color: #EDEFF2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.btn-ans:focus {
+  outline: 1px transparent;
+}
+
+.btn-ans:before {
+  display: none;
+}
+
+.btn-ans:-webkit-details-marker {
+  display: none;
+}
+
+.me{
+    border: none;
+    background-color: whitesmoke;
+    width: 50%;
+    margin: 10px auto;
+    padding: 10px 30px;
+    color: salmon;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-transform: uppercase;
+  }
+
+  .but {
+    text-align: center;
+    align-self: center;
+  }
+
+
+  .create {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  align-content: center;
+}
+
+.create:hover {
+  background-color: #fff;
+}
+
+.create:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .create {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+
+.lay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    margin-bottom: 10px;
+}
+
+a {
+    color:salmon;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+
+ </style>
+
+<nav class="navbar navbar-light" style="background-color: salmon;">
+    <!-- <div class="container-fluid"> -->
+      <h4>{{user.get_username}}</h4>
+      <button class="btn-ans"><a href="{% url 'todolist:logout' %}">Logout</a></button>
+    <!-- </div> -->
+  </nav>
+
+    <div class="container center">
     {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
     {% for item in data_todolist %}
-        <tr>
-            <td style="text-align:center">{{item.date}}</td>
-            <td style="text-align:center">{{item.title}}</td>
-            <td style="text-align:center">{{item.description}}</td>
-            <td>{% if item.isFinished %} Selesai {% else %} Belum Selesai {% endif %}</td>
-            <td><button class="btn-ans"><a href="{% url 'todolist:updateTodo' item.id %}">Update</a></button></td>
-            <td><button class="btn-ans"><a href="{% url 'todolist:deleteTodo' item.id %}">Delete</a></button></td>
-        </tr>
+    <div class="card">
+            <p style="text-align:center">{{item.title}}</p>
+            <hr/>
+            <p style="text-align:center">{{item.date}}</p>
+            <p style="text-align:center">{{item.description}}</p>
+            <p style="text-align:center">{% if item.isFinished %} Selesai {% else %} Belum Selesai {% endif %}</p>
+
+            <br>
+            <button class="btn-ans"><a href="{% url 'todolist:updateTodo' item.id %}">Update</a></button>
+            <button class="btn-ans"><a href="{% url 'todolist:deleteTodo' item.id %}">Delete</a></button>
+    </div>
     {% endfor %}
-</table>
+</div>
 
 <br>
-<button><a href="{% url 'todolist:create-task' %}">Tambah Task</a></button>
-<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+<br>
+
+<div class="lay">
+<button class="create"><a href="{% url 'todolist:create-task' %}">Tambah Task</a></button>
+</div>
 
 {% endblock content %}
