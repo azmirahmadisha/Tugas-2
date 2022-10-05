@@ -6,12 +6,49 @@
 
 {% block content %}
 
+<style>
+
+.login {
+    background: salmon;
+    margin-top: 100px;
+    margin-right: 20px;
+    margin-left: 450px;
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px;
+    width: 400px;
+    height: 350px;
+    align-content: center;
+}
+
+.btn {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin-left: 75px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.container-fluid {
+    border: salmon;
+}
+
+
+</style>
+
 <div class = "login">
 
     <h1>Login</h1>
 
     <form method="POST" action="">
         {% csrf_token %}
+        <div class="container-fluid">
         <table>
             <tr>
                 <td>Username: </td>
@@ -25,9 +62,11 @@
 
             <tr>
                 <td></td>
+                <br>
                 <td><input class="btn login_btn" type="submit" value="Login"></td>
             </tr>
         </table>
+    </div>
     </form>
 
     {% if messages %}

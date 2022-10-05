@@ -6,10 +6,78 @@
 
 {% block content %}  
 
-<div class = "login">
+<style>
+
+.login {
+    background: salmon;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    margin-left: 450px;
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px;
+    width: 400px;
+    height: 500px;
+    align-content: center;
+}
+    h5 {
+        color: #000000;
+        text-align: center;
+    }
+
+    h3 {
+        color: #000000;
+    }
+
+
+    .form {
+        margin-top: 200px;
+        margin-right: 20px;
+        margin-left: 10px;
+    }
+
+
+    input[type=button], input[type=submit], input[type=reset] {
+        background-color: black;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    input[type=text] {
+        height: 45px;
+        border: 1px solid #eee;
+        box-shadow: none;
+        outline: none;
+        border: 2px solid #000;
+        position: relative
+    }
+
     
-    <h1>Task Form</h1>
-        <form method="POST">  
+    .card{
+        background: salmon;
+        border: none;
+        height: 100px;
+    }
+
+    body {
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+
+    </style>
+
+<div class = "login">
+    <div class="card px-5 py-5" id="form1">
+        <h1 style="text-align: center; ">Task Form</h1>
+        <br>
+        <form method="POST" style="text-align: center; ">  
             {% csrf_token %}  
             <label for="judul">Nama Task:</label>
             <input type="text" id="judul" name="title"><br><br>
@@ -19,6 +87,7 @@
 
             <input type="submit" value="Tambah Task Baru">
         </form>
+    </div>
 
 </div>  
 
