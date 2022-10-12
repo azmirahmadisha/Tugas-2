@@ -1,13 +1,20 @@
+
 import datetime
+from pydoc import describe
 from django.http import HttpResponseRedirect
-from django.contrib.auth import authenticate, login
-from django.shortcuts import redirect
-from django.contrib import messages
 from django.urls import reverse
 from django.shortcuts import render
+from django.http import HttpResponse
+from django.core import serializers
+from todolist.models import TodoListItem
+from django.shortcuts import redirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseNotFound
 
 from todolist.models import TodoListItem
 
@@ -77,3 +84,46 @@ def updateTodo(request, i):
     item.isFinished = not item.isFinished
     item.save()
     return HttpResponseRedirect('/todolist/')
+
+@login_required(login_url='/todolist/login/')
+def show_json(request):
+    data = TodoListItem.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+@login_required(login_url='/todolist/login/')
+def show_todolist_ajax(request):
+    context = {
+    'nama': 'Adish',
+    }
+    return render(request, "todolist_ajax.html", context)
+
+# def add_todolist_ajax(request: HttpRequest):
+#      if request.method == "POST":
+#          title = request.POST.get("title")
+#          date = request.POST.get("date")
+#          description = request.POST.get("description")
+
+#          new_barang = TodoListItem(
+#              title=title,
+#              date=date,
+#              description=description,
+#          )
+#          new_barang.save()
+#          return HttpResponse(
+#              serializers.serialize("json", [new_barang]),
+#              content_type="application/json",
+#          )
+
+#      return HttpResponseRedirect('/todolist/ajax')
+
+@login_required(login_url='/todolist/login/')
+def add_todolist_ajax(request):
+    if request.method == "POST":
+        judul = request.POST.get("title")
+        deskripsi = request.POST.get("description")
+        add_todolist = TodoListItem(user=request.user, title=judul, description=deskripsi, date=datetime.datetime.now())
+        add_todolist.save()
+
+        return HttpResponse(b"CREATED", status=201)
+
+    return HttpResponseNotFound()

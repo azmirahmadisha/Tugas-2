@@ -1,0 +1,450 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<style>
+
+*{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+  background-color: 	#FFA07A;
+}
+
+.container{
+  width: 80%;
+  min-height: 100vh;  
+  display: -webkit-box;  
+  display: -ms-flexbox;  
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:auto;
+  margin-bottom: auto;
+}
+
+.center{
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card{
+  background-color: white;
+  width: 250px;
+  min-height: 250px * 1.618;
+  
+  display: -webkit-box;
+  
+  display: -ms-flexbox;
+  
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  margin: 5px;
+  
+  -webkit-box-shadow: -20px -20px 0px 0px lighten(salmon, 5%);
+  box-shadow: -20px -20px 0px 0px lighten(salmon, 5%);
+  border-radius: 10px;
+  
+  -webkit-animation-name: shadow-show; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
+  animation-name: shadow-show;
+  animation-duration: 1.5s;
+  
+  -webkit-transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+  -o-transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+  transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000); /* custom */
+
+}
+  
+  h1,h2,h3,h4,h5{
+    margin: 0px;
+    padding: 0px 0px 15px 0px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+    color: black;
+  }
+  
+  hr{
+    display: block;
+    border: none;
+    height: 3px;
+    background-color: salmon;
+    margin: 0px;
+    
+    -webkit-animation-name: line-show; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 0.3s; /* Safari 4.0 - 8.0 */
+    animation-name: line-show;
+    animation-duration: 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+    -o-transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+    transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000); /* custom */
+  }
+  
+  p{
+    margin: 15px 0px 0px 0px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 100;
+    letter-spacing: -0.25px;
+    line-height: 1.25;
+    font-size: 16px;
+    word-break: break-all;
+    word-wrap: pre-wrap;
+    color: black;
+    
+    -webkit-animation-name: p-show; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
+    animation-name: p-show;
+    animation-duration: 1.5s;
+  }
+
+.btn-ans {
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.btn-ans:hover {
+  background-color: #F3F4F6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.btn-ans:disabled {
+  background-color: #FAFBFC;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959DA5;
+  cursor: default;
+}
+
+.btn-ans:active {
+  background-color: #EDEFF2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.btn-ans:focus {
+  outline: 1px transparent;
+}
+
+.btn-ans:before {
+  display: none;
+}
+
+.btn-ans:-webkit-details-marker {
+  display: none;
+}
+
+.me{
+    border: none;
+    background-color: whitesmoke;
+    width: 50%;
+    margin: 10px auto;
+    padding: 10px 30px;
+    color: salmon;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-transform: uppercase;
+  }
+
+  .but {
+    text-align: center;
+    align-self: center;
+  }
+
+
+  .create {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  align-content: center;
+}
+
+.create:hover {
+  background-color: #fff;
+}
+
+.create:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .create {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+
+.lay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    margin-bottom: 10px;
+}
+
+a {
+    color:salmon;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+
+ </style>
+
+<script>
+$(function() {
+  var html = "";
+  $.ajax({
+    url: "{% url 'todolist:show_json' %}",
+    success: function(result) {
+      $.each(result, function(index, item) {
+        html +='<div class="card">';
+        html +='<hr/>';
+        html += `<p style="text-align:center">${item.title}</p>`;
+        html += `<p style="text-align:center">${item.date}</p>`;
+        html += `<p style="text-align:center">${item.description}</p>`;
+        // html += `<p style="text-align:center">${% if item.isFinished %} Selesai {% else %} Belum Selesai {% endif %}`;
+        html += "</div>";
+        //using .html() will display one card,use loop to display each card
+      });
+      
+      $(".container center").html(html);
+    }
+  });
+});
+</script>
+
+<!-- 
+<script>
+  $(document).ready(function () {
+      // FETCHING DATA FROM JSON FILE
+      $.getJSON( "{% url 'todolist:show_json' %}", function (data) {
+          var html = '';
+          // ITERATING THROUGH OBJECTS
+          $.each(data, function (key, value) {
+              //CONSTRUCTION OF ROWS HAVING
+              // DATA FROM JSON OBJECT
+              html +='<div class="card">';
+              html +='<hr/>';
+              html += `<p style="text-align:center">${value.fields.title}</p>`;
+              html += `<p style="text-align:center">${value.fields.date}</p>`;
+              html += `<p style="text-align:center">${value.fields.description}</p>`;
+          });
+          //INSERTING ROWS INTO TABLE 
+          $('#contain').append(html);
+      });
+  });
+</script> -->
+
+<!-- <script>
+$(function () {
+  $('.container center > div').remove();
+  $.ajax({
+      url: "{% url 'todolist:show_json' %}",
+      success: function (result) {
+          $.each(result, function (index, item) {
+              var title = item.title; //this should be in div class = "card-header"
+              var date = item.date; //this should be in div class = "card-header"
+              var description = item.description; //this should be in h5 class = "card-title"
+
+              var html = '<div class="card">';
+                  html +='<hr/>';
+                  html += '<p style="text-align:center" class="tit">' + title + '</p>';
+                  html += '<p style="text-align:center" class="dat">' + value.fields.date + '</p>';
+                  html += '<p style="text-align:center" class="desc">' + value.fields.description + '</p>';
+                  html += '<br>';
+                  html += '</div>';
+                  
+              //use loop below here and inject to div.container    
+              $(". container center").append(html);
+
+          });
+          // console.log('success', result);
+          // console.log(result[0].body);
+          // console.log($(result).length);
+      }
+  });
+});
+</script> -->
+
+<nav class="navbar navbar-light" style="background-color: salmon;">
+    <!-- <div class="container-fluid"> -->
+      <h4>{{user.get_username}}</h4>
+      <button class="btn-ans"><a href="{% url 'todolist:logout' %}">Logout</a></button>
+    <!-- </div> -->
+  </nav>
+
+    <div class="container center" id="contain">
+    <div class="card" id="cardd">
+            {% for item in data_todolist %}
+            <button class="btn-ans"><a href="{% url 'todolist:updateTodo' item.id %}">Update</a></button>
+            <button class="btn-ans"><a href="{% url 'todolist:deleteTodo' item.id %}">Delete</a></button>
+    </div>
+    {% endfor %}
+</div>
+
+<br>
+<br>
+
+<div class="lay">
+<button class="create"><a href="{% url 'todolist:add_todolist_ajax' %}">Tambah Task</a></button>
+</div>
+<!-- 
+<script>
+    $(function () {
+      $('.container center > div').remove();
+      $.ajax({
+          url: "{% url 'todolist:show_json' %}",
+          success: function (result) {
+              $.each(result, function (index, item) {
+                  var title = item.title; //this should be in div class = "card-header"
+                  var date = item.date; //this should be in div class = "card-header"
+                  var description = item.description; //this should be in h5 class = "card-title"
+    
+                  var html = '<div class="card">';
+                      html += '<hr/>';
+                      html += '<p style="text-align:center" class="tit">' + title + '</p>';
+                      html += '<p style="text-align:center" class="dat">' + value.fields.date + '</p>';
+                      html += '<p style="text-align:center" class="desc">' + value.fields.description + '</p>';
+                      html += '<br>';
+                      html += '</div>';
+                      
+                  //use loop below here and inject to div.container    
+                  $("#contain").append(html);
+              });
+              // console.log('success', result);
+              // console.log(result[0].body);
+              // console.log($(result).length);
+          }
+      });
+    });
+    </script> -->
+
+
+     <!-- <script>
+    function postNew(e) {
+      e.preventDefault()
+      const judul = $("#title").val()
+      const tanggal = $("#date").val()
+      const deskripsi = $("#description").val()
+  
+      const data = {
+        judul: judul,
+        tanggal: tanggal,
+        deskripsi: deskripsi,
+        csrfmiddlewaretoken: "{{ csrf_token }}"
+      }
+  
+    }
+  
+    function writeTable(data) {
+      const table = $("#tbl")
+      table.empty()
+      for (let i = 0; i < data.length; i++) {
+        table.append(`
+          <tr>
+            <td>${data[i].fields.title}</td>
+            <td>${data[i].fields.date}</td>
+            <td>${data[i].fields.description}</td>
+          </tr>
+          `)
+      }
+    }
+  
+    function fetchData() {
+      $.get("/todolist/json", writeTable)
+    }
+  
+    $(document).ready(() => {
+      $("#newBtn").click(postNew)
+      fetchData()
+    })
+  </script> -->
+
+  <div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Subscribe</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fas fa-user prefix grey-text"></i>
+          <input type="text" id="form3" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form3">Your name</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="email" id="form2" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form2">Your email</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-indigo">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalSubscriptionForm">Launch
+    Modal Subscription Form</a>
+</div>
+
+{% endblock content %}

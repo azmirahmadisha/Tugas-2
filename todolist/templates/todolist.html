@@ -238,8 +238,46 @@ a:hover {
   color: hotpink;
 }
 
+#buttons {
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
 
  </style>
+
+<!-- <div id="taskform">
+<h1>Todolist</h1>
+<form id="form" onsubmit="return false;">
+  {% csrf_token %}
+  <label>Judul</label>
+  <input type="text" name="title"></input>
+  <label>Deskripsi</label>
+  <input type="text" name="description"></input>
+  <button id="buttons" type="submit" value="Submit"></button>
+</form>
+</div> -->
 
 <nav class="navbar navbar-light" style="background-color: salmon;">
     <!-- <div class="container-fluid"> -->
@@ -248,28 +286,129 @@ a:hover {
     <!-- </div> -->
   </nav>
 
-    <div class="container center">
-    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
-    {% for item in data_todolist %}
-    <div class="card">
-            <p style="text-align:center">{{item.title}}</p>
-            <hr/>
-            <p style="text-align:center">{{item.date}}</p>
-            <p style="text-align:center">{{item.description}}</p>
-            <p style="text-align:center">{% if item.isFinished %} Selesai {% else %} Belum Selesai {% endif %}</p>
+<div class="container center" id="tasks">
+<script>
+  async function getTodolist() {
+    return fetch("{% url 'todolist:show_json' %}")
+    .then(response => response.json())
+    .then(todolist => {
+      return todolist;
+    })
+    .catch(error => {
+      console.error("ERROR:", error);
+    })
+  }
 
-            <br>
-            <button class="btn-ans"><a href="{% url 'todolist:updateTodo' item.id %}">Update</a></button>
-            <button class="btn-ans"><a href="{% url 'todolist:deleteTodo' item.id %}">Delete</a></button>
-    </div>
-    {% endfor %}
+  
+  async function refreshWishlist() {
+  getTodolist().then(todolist => {
+    let todos = "";
+
+    for (let i = 0; i < todolist.length; i++) {
+      if (todolist[i].fields.isFinished) {
+        var status = "Selesai";
+      } else {
+        var status = "Belum Selesai";
+      }
+
+      const card = `
+      <div class="card">
+              <p style="text-align:center">${todolist[i].fields.title}</p>
+              <hr/>
+              <p style="text-align:center">${todolist[i].fields.date}</p>
+              <p style="text-align:center">${todolist[i].fields.description}</p>
+              <p style="text-align:center">${status}</p>
+              <br>
+              <button class="btn-ans"><a href="/todolist/updateItem/${todolist[i].pk}">Update</a></button>
+              <button class="btn-ans"><a href="/todolist/deleteTodoItem/${todolist[i].pk}">Delete</a></button>
+      </div>
+      `;
+
+      todos += card;
+    }
+
+    document.getElementById("tasks").innerHTML = todos;
+  });
+}
+
+</script>
+
+
 </div>
 
 <br>
 <br>
 
-<div class="lay">
+<!-- <div class="lay">
 <button class="create"><a href="{% url 'todolist:create-task' %}">Tambah Task</a></button>
+</div> -->
+
+<!-- <div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+  <div class="card px-5 py-5" id="form1">
+    <div class="modal-header text-center">
+      <h1 style="text-align: center; ">Task Form</h1>
+      <br>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+      <form method="POST" style="text-align: center; " id="forms">  
+          {% csrf_token %}  
+          <label for="title">Nama Task:</label>
+          <input type="text" id="title" name="title"><br><br>
+
+          <label for="description">Deskripsi Task:</label>
+          <input type="text" id="description" name="description"><br><br>
+
+          <input type="submit" value="Tambah Task Baru" id="butt">
+      </form>
+  </div>
+</div> -->
+
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h1 style="text-align: center; ">Task Form</h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <form method="POST" style="text-align: center; " id="forms">  
+          {% csrf_token %}  
+          <label for="title">Nama Task:</label>
+          <input type="text" id="title" name="title"><br><br>
+
+          <label for="description">Deskripsi Task:</label>
+          <input type="text" id="description" name="description"><br><br>
+      </form>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <input type="submit" value="Tambah Task Baru" id="butt">
+      </div>
+    </div>
+  </div>
 </div>
+
+<div class="text-center">
+  <a href="" class="create" data-toggle="modal" data-target="#modalLoginForm">Add Task</a>
+</div>
+
+<script>
+    function addTodolist() {
+    fetch("{% url 'todolist:add_todolist_ajax' %}", {
+          method: "POST",
+          body: new FormData(document.querySelector('#forms'))
+      }).then(refreshWishlist)
+    return false
+  }
+
+  document.getElementById("butt").onclick = addTodolist
+  refreshWishlist()
+</script>
 
 {% endblock content %}
