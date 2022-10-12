@@ -300,7 +300,7 @@ a:hover {
   }
 
   
-  async function refreshWishlist() {
+  async function refreshTodolist() {
   getTodolist().then(todolist => {
     let todos = "";
 
@@ -330,7 +330,6 @@ a:hover {
     document.getElementById("tasks").innerHTML = todos;
   });
 }
-
 </script>
 
 
@@ -403,12 +402,12 @@ aria-hidden="true">
     fetch("{% url 'todolist:add_todolist_ajax' %}", {
           method: "POST",
           body: new FormData(document.querySelector('#forms'))
-      }).then(refreshWishlist)
+      }).then(refreshTodolist)
     return false
   }
 
   document.getElementById("butt").onclick = addTodolist
-  refreshWishlist()
+  refreshTodolist()
 </script>
 
 {% endblock content %}
