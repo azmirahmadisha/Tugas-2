@@ -6,7 +6,7 @@ Aplikasi Heroku dapat diakses pada [tautan berikut](http://katalog-tugas2.heroku
 
 
 ### Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma Event-Driven Programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
-<p align="justify">Event-driven programming adalah paradigma pemrograman di mana aliran program ditentukan oleh peristiwa seperti tindakan pengguna (klik mouse, penekanan tombol), keluaran sensor, atau pesan yang lewat dari program atau utas lain. Event-driven programming digunakan untuk menyinkronkan terjadinya beberapa peristiwa dan membuat program sesederhana mungkin. Contoh dari penerapannya pada tugas ini adalah tombol Tambah Task pada halaman ‘todolist/ajax’ yang akan mengantarkan pengguna ke modal form pembuatan task ketika ditekan.</p>
+<p align="justify">Event-driven programming adalah paradigma pemrograman di mana aliran program ditentukan oleh peristiwa seperti tindakan pengguna (klik mouse, penekanan tombol), keluaran sensor, atau pesan yang lewat dari program atau utas lain. Event-driven programming digunakan untuk menyinkronkan terjadinya beberapa peristiwa dan membuat program sesederhana mungkin. Contoh dari penerapannya pada tugas ini adalah tombol Add Task pada halaman ‘todolist/’ yang akan mengantarkan pengguna ke modal form pembuatan task ketika ditekan.</p>
 
 
 ### Jelaskan penerapan asynchronous programming pada AJAX.
